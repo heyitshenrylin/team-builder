@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Team Builder Extension Popup</title>
+    
+	
+	<!--style used for the entire window-->
+	<style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+	
+	<!--import the scripts-->
+    <script src="popup.js"></script>
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+  </head>
+  
+  
+  
+  
+  <body>
+	<!--holder starts-->
+	<div id="holder" style=" width:220px; height:100px;">
+
+        <button id="listbutton" style="width:100%">List</button>
+        <br>
+        <input id="textInput" type="text"; value="Enter a number"; selected; style="width:98%;">
+        <!--seperate the radiobuttons-->
+            <div style="float:left; width:50%;">
+              <input id="GroupsOption" type="radio" name="sort" value="group" checked > Groups
+            </div>
+            
+            <div  style="float:right; width:50%;">
+              <input id="PeopleOption" type="radio" name="sort" value="people" >People
+            </div>
+            <br>
+			
+			<!--start authorize section-->
+			<div id="authorize-div" style="border-radius:10%; width:100%; height:auto; ">
+				<span>Authorize access to Google Sheets API</span>
+				<button id="authorize-button">
+					Authorize
+				</button>
+			</div>
+			<!-- end authorize section-->
+            <button id="CreateButton" style="border-radius:10%; width:100%; height:auto;">Create</button>
+	</div>
+    <!--holder ends-->    
+  </body>
+</html>
+

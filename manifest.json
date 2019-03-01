@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name" : "Group Selector",
+	"version": "1",
+	"description" : "Extension to create and organize groups",
+	"icons": { "16": "icon16.png",
+				"48": "icon48.png",
+				"128": "icon128.png" },				
+	"browser_action": 
+	{
+		"default_title" : "TeamBuilder",
+		"default_popup" : "popup.html",
+		"default_icon" : "icon16.png"
+	},
+	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
+	
+	"permissions":
+	[
+	"tabs"
+	]
+	
+
+
+
+
+}
